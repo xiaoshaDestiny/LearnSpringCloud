@@ -1,6 +1,6 @@
-#microservicecloud-provider-dept-8001  微服务的服务提供者
+#microservicecloud-provider-dept-8002  微服务的服务提供者
 server:
-  port: 8001
+  port: 8002
   
   
 mybatis:
@@ -15,7 +15,7 @@ spring:
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
-    url: jdbc:mysql://localhost:3306/cloudDB01              # 数据库名称
+    url: jdbc:mysql://localhost:3306/cloudDB02              # 数据库名称
     username: root
     password: root
     dbcp2:
@@ -31,7 +31,7 @@ eureka:
       #defaultZone: http://localhost:7001/eureka             #单机版
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/        #联机版多个
   instance:
-    instance-id: microservicecloud-dept8001                 #自定义服务名称信息
+    instance-id: microservicecloud-dept8002                 #自定义服务名称信息
     prefer-ip-address: true                                 #访问路径可以显示IP地址  
     
     
