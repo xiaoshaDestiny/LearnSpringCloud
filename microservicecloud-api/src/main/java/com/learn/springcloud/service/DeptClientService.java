@@ -13,7 +13,9 @@ import com.learn.springcloud.entities.Dept;
  * @author xiaosha
  *
  */
-@FeignClient(value = "MICROSERVICECLOUD-DEPT")
+//@FeignClient(value = "MICROSERVICECLOUD-DEPT")
+//将服务熔断、降级的回调方法抽取到Service层。利用了AOP的异常通知
+@FeignClient(value = "MICROSERVICECLOUD-DEPT",fallbackFactory=DeptClientServiceFallbackFactory.class)
 public interface DeptClientService
 {
 	@RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
@@ -25,17 +27,3 @@ public interface DeptClientService
 	@RequestMapping(value = "/dept/add", method = RequestMethod.POST)
 	public boolean add(Dept dept);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-//@FeignClient(value = "MICROSERVICECLOUD-DEPT",fallbackFactory=DeptClientServiceFallbackFactory.class)
